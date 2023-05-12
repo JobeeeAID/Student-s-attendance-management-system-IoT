@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import {
+  CommonModule,
   HashLocationStrategy,
   LocationStrategy,
   PathLocationStrategy,
@@ -29,9 +30,10 @@ import {
   DefaultFooterComponent,
   DefaultHeaderComponent,
   DefaultLayoutComponent,
-} from './containers';
+} from './components';
 
 import {
+  AlertModule,
   AvatarModule,
   BadgeModule,
   BreadcrumbModule,
@@ -54,7 +56,8 @@ import {
 
 import { IconModule, IconSetService } from '@coreui/icons-angular';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { LogoutComponent } from './logout/logout.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { LoginComponent } from './components/login/login.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -67,7 +70,12 @@ const APP_CONTAINERS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS, LogoutComponent],
+  declarations: [
+    AppComponent,
+    ...APP_CONTAINERS,
+    LogoutComponent,
+    LoginComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -98,6 +106,8 @@ const APP_CONTAINERS = [
     ListGroupModule,
     CardModule,
     NgbModule,
+    CommonModule,
+    AlertModule,
   ],
   providers: [
     {
