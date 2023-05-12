@@ -5,11 +5,11 @@ import { Semester } from './semester';
 
 export class Seance {
   id: number;
-  date: Date;
-  semester: Semester;
-  element: Element;
-  salle: Salle;
+  date: string;
+  semester_id: number;
+  element_id: number;
+  salle_id: number;
   type: Enumerations.SeanceType;
-  time: any;
-  duration: any;
+  time: string;
+  duration: string;
 }
